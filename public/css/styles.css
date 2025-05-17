@@ -20,7 +20,6 @@ body {
     position: relative;
 }
 
-/* Checkerboard Border */
 body::before, body::after {
     content: '';
     position: fixed;
@@ -54,25 +53,108 @@ body::after {
     padding: 0 15px;
 }
 
-/* Navigation */
-.main-nav {
-    background-color: #333;
-    color: var(--secondary-color);
+#wrapper {
+    max-width: calc(100% - 60px); /* Subtract the width of checkerboard borders */
+    margin: 0 auto;
+    background-color: white;
+    position: relative;
+    min-height: 100vh;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+#top-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: transparent;
+    padding: 20px 40px; /* Increased padding to match image spacing */
+} 
+
+main {
+    padding: 0 40px; /* Match the side spacing in the image */
+}
+
+footer {
+    padding: 20px 40px; /* Consistent spacing */
+    text-align: left;
+}
+
+.siteName {
+    flex-grow: 1;
+}
+
+.siteName a {
+    color: #000; /* Black text */
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+#tools a {
+    color: #000; /* Black text */
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 5px 10px;
+    border: 1px solid #000; /* Black border */
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#tools a:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+.main-nav {
+    background-color: #000; /* Black background */
+    color: var(--secondary-color);
+    display: flex;
+    justify-content: space-between; /* Center the navigation items */
+    align-items: space-between;
     padding: 10px 15px;
 }
 
-.main-nav ul {
-    display: flex;
-    list-style: none;
-    gap: 15px;
+nav {
+    background-color: #333; /* Dark gray background */
+    padding: 10px 0;
 }
 
-.main-nav a {
-    color: var(--secondary-color);
-    text-decoration: none;
+nav ul {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    color: white;
+    padding: 0 15px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+nav ul li:hover {
+    color: #0097b2; /* Teal color on hover */
+}
+
+/* If you want to add active state */
+nav ul li.active {
+    color: #0097b2;
+}
+
+/* Optional: Add separators between nav items */
+nav ul li:not(:last-child)::after {
+    content: '|';
+    color: white;
+    margin-left: 15px;
+    position: absolute;
+    right: -15px;
+}
+
+nav ul li {
+    position: relative;
 }
 
 .my-account {
@@ -205,25 +287,4 @@ body::after {
     .delorean-upgrades {
         flex: 1;
     }
-}
-
-.page-footer {
-    text-align: center;
-    padding: 15px;
-    background-color: #f4f4f4;
-}
-
-.page-footer .copyright {
-    margin-bottom: 10px;
-}
-
-.page-footer .error-link a {
-    color: var(--primary-color);
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.page-footer .error-link a:hover {
-    color: var(--accent-color);
-    text-decoration: underline;
 }
