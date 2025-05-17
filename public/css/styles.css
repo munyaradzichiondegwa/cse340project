@@ -13,6 +13,10 @@
     box-sizing: border-box;
 }
 
+/* Global Styles */
+html {
+    font-size: 16px;
+}
 body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
@@ -62,6 +66,7 @@ body::after {
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
+/* Header */
 #top-header {
     display: flex;
     justify-content: space-between;
@@ -105,6 +110,8 @@ footer {
     color: #fff;
 }
 
+/* Navigation */
+/* Main Navigation */
 .main-nav {
     background-color: #000; /* Black background */
     color: var(--secondary-color);
@@ -139,19 +146,11 @@ nav ul li:hover {
     color: #0097b2; /* Teal color on hover */
 }
 
-/* If you want to add active state */
+/* Active state */
 nav ul li.active {
     color: #0097b2;
 }
 
-/* Optional: Add separators between nav items */
-nav ul li:not(:last-child)::after {
-    content: '|';
-    color: white;
-    margin-left: 15px;
-    position: absolute;
-    right: -15px;
-}
 
 nav ul li {
     position: relative;
